@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridgr — Founding Member Waitlist</title>
+  <meta name="description" content="The only TradingView automation platform built for prop firm traders. Daily loss limits, consistency caps, auto-shutoffs. Join 100 founding members." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#1db87f;--gl:#e0f5ee;--gm:#5DCAA5;--gd:#0d6e50;
+      --ink:#0c1210;--i2:#1e2a24;--i3:#546058;--i4:#8ba098;--i5:#bcccc8;
+      --sf:#f3f7f5;--s2:#e8f0ec;--wh:#ffffff;
+      --bd:rgba(12,18,16,0.1);--b2:rgba(12,18,16,0.06);
+      --dark:#0a0f0d;--dark2:#111916;--dark3:#172118;--dark4:#1e2d22;
+      --dbd:rgba(255,255,255,0.07);--db2:rgba(255,255,255,0.04);
+      --r:10px;--rl:16px;--rx:24px;
+      --fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace
+    }
+    html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+    body{font-family:var(--fb);background:var(--wh);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.88)}}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
+    @keyframes slideUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+    .au{animation:fadeUp 0.7s ease both}
+    .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+
+    /* ANNOUNCE */
+    .ann{background:var(--g);color:rgba(255,255,255,.9);text-align:center;padding:11px 5%;font-size:13px;font-weight:400;display:flex;align-items:center;justify-content:center;gap:10px}
+    .ann strong{font-weight:600}
+    .ann a{color:#fff;text-decoration:underline;text-underline-offset:3px;opacity:.8}
+    .ann a:hover{opacity:1}
+
+    /* NAV — dark */
+    nav{position:sticky;top:0;z-index:1000;background:rgba(10,15,13,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--dbd)}
+    .nav-i{max-width:1160px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:var(--fd);font-size:20px;font-weight:800;letter-spacing:-.5px;color:#fff}
+    .logo span{color:var(--g)}
+    .nav-links{display:flex;gap:30px;list-style:none}
+    .nav-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color .15s}
+    .nav-links a:hover{color:#fff}
+    .nav-r{display:flex;gap:8px;align-items:center}
+    .btn-ghost-d{font-family:var(--fb);font-size:14px;color:rgba(255,255,255,.5);background:none;border:none;cursor:pointer;padding:8px 14px;border-radius:var(--r);transition:background .15s,color .15s}
+    .btn-ghost-d:hover{background:rgba(255,255,255,.06);color:#fff}
+    .btn-nav{font-family:var(--fb);font-size:14px;font-weight:500;background:var(--g);color:#fff;border:none;cursor:pointer;padding:9px 20px;border-radius:var(--r);transition:background .15s,transform .1s}
+    .btn-nav:hover{background:var(--gm)}
+    .btn-nav:active{transform:scale(.97)}
+
+    /* HERO — full dark */
+    .hero-section{background:var(--dark);padding:0}
+    .hero-inner{max-width:900px;margin:0 auto;padding:96px 5% 88px;text-align:center}
+    .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(29,184,127,.12);border:1px solid rgba(29,184,127,.2);color:var(--gm);font-size:12px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:28px;letter-spacing:.03em}
+    .hero-dot{width:6px;height:6px;border-radius:50%;background:var(--g);animation:pulse 2s infinite}
+    .hero-h1{font-family:var(--fd);font-size:clamp(40px,6vw,72px);font-weight:800;line-height:1.05;letter-spacing:-2px;color:#fff;margin-bottom:22px}
+    .hero-h1 .g{color:var(--g)}
+    .hero-h1 .dim{color:rgba(255,255,255,.3);font-weight:600}
+    .hero-sub{font-size:17px;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;font-weight:300}
+    .hero-sub strong{color:rgba(255,255,255,.7);font-weight:500}
+
+    /* FOUNDING BOX — dark variant */
+    .fbox{background:var(--dark2);border:1px solid var(--dbd);border-radius:var(--rx);padding:32px;max-width:520px;margin:0 auto 32px;position:relative;overflow:hidden;text-align:left}
+    .fbox::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),var(--gm),var(--g),transparent)}
+    .fb-lbl{font-size:11px;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:16px}
+    .spots-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+    .spots-n{font-family:var(--fd);font-size:48px;font-weight:800;color:#fff;letter-spacing:-2px;line-height:1}
+    .spots-of{font-size:15px;color:rgba(255,255,255,.25)}
+    .spots-lbl{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:18px}
+    .spots-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:22px}
+    .spots-fill{height:100%;border-radius:2px;background:var(--g);width:37%;position:relative;overflow:hidden}
+    .spots-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimmer 2.5s infinite}
+    .fb-perks{display:flex;flex-direction:column;gap:9px;margin-bottom:22px}
+    .fb-perk{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.55)}
+    .fp-ck{width:18px;height:18px;border-radius:50%;background:rgba(29,184,127,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;color:var(--gm)}
+    .fb-form{display:flex;gap:8px}
+    .fb-in{flex:1;font-family:var(--fb);font-size:14px;padding:13px 16px;border-radius:var(--r);border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;outline:none;transition:border-color .15s}
+    .fb-in::placeholder{color:rgba(255,255,255,.2)}
+    .fb-in:focus{border-color:rgba(29,184,127,.5);background:rgba(255,255,255,.07)}
+    .fb-btn{font-family:var(--fb);font-size:14px;font-weight:600;background:var(--g);color:#fff;border:none;padding:13px 22px;border-radius:var(--r);cursor:pointer;white-space:nowrap;transition:background .15s,transform .1s}
+    .fb-btn:hover{background:var(--gm)}
+    .fb-btn:active{transform:scale(.97)}
+    .fb-note{font-size:11px;color:rgba(255,255,255,.2);margin-top:10px;text-align:center}
+
+    .hero-proof{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+    .h-pi{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.35)}
+    .h-pi-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.15)}
+
+    /* DARK → LIGHT TRANSITION */
+    .hero-fade{height:64px;background:linear-gradient(to bottom,var(--dark),var(--wh))}
+
+    /* TICKER */
+    .ticker{background:var(--dark3);overflow:hidden;padding:11px 0;border-top:1px solid var(--dbd);border-bottom:1px solid var(--dbd);max-width:100vw;width:100%}
+    .ticker-track{display:flex;animation:ticker 30s linear infinite;width:max-content}
+    .ti{display:flex;align-items:center;gap:7px;padding:0 30px;font-size:12px;color:rgba(255,255,255,.3);white-space:nowrap;font-family:var(--fm)}
+    .ti .s{color:rgba(255,255,255,.7);font-weight:500}
+    .up{color:#5DCAA5}.dn{color:#e87070}.sp{color:rgba(255,255,255,.1)}
+
+    /* STATS — light */
+    .stats{background:var(--sf);border-bottom:1px solid var(--bd);padding:36px 5%}
+    .stats-i{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+    .st{text-align:center;padding:0 20px;border-right:1px solid var(--bd)}
+    .st:last-child{border-right:none}
+    .st-n{font-family:var(--fd);font-size:36px;font-weight:700;line-height:1;margin-bottom:4px;letter-spacing:-1px}
+    .st-n .g{color:var(--g)}
+    .st-l{font-size:13px;color:var(--i4)}
+
+    /* SECTIONS */
+    .sw{max-width:1160px;margin:0 auto;padding:0 5%}
+    .ey{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:10px}
+    .sh2{font-family:var(--fd);font-size:clamp(26px,3vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:14px}
+    .ssub{font-size:16px;color:var(--i3);line-height:1.7;font-weight:300;max-width:500px}
+
+    /* PROBLEM */
+    .prob-sec{padding:88px 0}
+    .prob-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+    .prob-card{background:var(--wh);border:1px solid var(--bd);border-radius:var(--rl);padding:26px}
+    .prob-n{font-family:var(--fd);font-size:38px;font-weight:800;color:var(--g);letter-spacing:-1px;margin-bottom:10px}
+    .prob-d{font-size:14px;color:var(--i3);line-height:1.65}
+    .prob-d strong{color:var(--ink);font-weight:500}
+
+    /* HOW IT WORKS */
+    .how-sec{padding:88px 0;background:var(--sf)}
+    .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:52px}
+    .steps{display:flex;flex-direction:column}
+    .step{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--b2);cursor:pointer}
+    .step:last-child{border-bottom:none}
+    .sn{width:36px;height:36px;border-radius:50%;background:var(--s2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:14px;font-weight:700;color:var(--i4);flex-shrink:0;transition:all .2s}
+    .step.active .sn{background:var(--g);color:#fff}
+    .st2{font-size:15px;font-weight:500;color:var(--i3);margin-bottom:4px;transition:color .2s}
+    .step.active .st2{color:var(--ink)}
+    .sd{font-size:13px;color:var(--i4);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .35s ease,opacity .2s;opacity:0}
+    .step.active .sd{max-height:80px;opacity:1}
+    .how-visual{background:var(--wh);border:1px solid var(--bd);border-radius:var(--rx);padding:26px;position:sticky;top:80px}
+    .cblock{background:var(--dark);border-radius:var(--r);padding:16px;font-family:var(--fm);font-size:12px;line-height:1.8;margin-bottom:14px}
+    .cc{color:#3d5c48}.ck{color:#9FE1CB}.cv{color:#FAC775}.cs{color:#f4a261}.cp{color:rgba(255,255,255,.3)}
+    .wh-url{background:var(--sf);border:1px solid var(--bd);border-radius:var(--r);padding:11px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+    .wh-t{font-family:var(--fm);font-size:11px;color:var(--gd);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .cp-btn{font-family:var(--fb);font-size:11px;font-weight:500;background:var(--gl);color:var(--gd);border:none;padding:5px 12px;border-radius:6px;cursor:pointer;flex-shrink:0;transition:background .15s}
+    .cp-btn:hover{background:var(--gm);color:#fff}
+
+    /* FEATURES */
+    .feat-sec{padding:88px 0}
+    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+    .fc{background:var(--wh);border:1px solid var(--bd);border-radius:var(--rl);padding:26px;transition:border-color .2s,transform .2s}
+    .fc:hover{border-color:rgba(29,184,127,.4);transform:translateY(-3px)}
+    .fc.big{background:var(--dark);border-color:transparent;grid-column:span 2}
+    .fc.big:hover{border-color:rgba(29,184,127,.2);transform:none}
+    .fi{width:40px;height:40px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+    .fi svg{width:20px;height:20px}
+    .fh3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:7px}
+    .big .fh3{color:#fff;font-size:18px}
+    .fp{font-size:13px;color:var(--i3);line-height:1.65}
+    .big .fp{color:rgba(255,255,255,.45);font-size:14px}
+    .obadge{display:inline-block;font-size:10px;font-weight:600;background:var(--g);color:#fff;padding:2px 8px;border-radius:5px;margin-left:8px;vertical-align:middle;letter-spacing:.03em}
+    .big .obadge{background:rgba(29,184,127,.2);color:var(--gm)}
+    .bi{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .bmet{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+    .bm{background:rgba(255,255,255,.05);border-radius:var(--r);padding:12px;border:1px solid rgba(255,255,255,.04)}
+    .bml{font-size:10px;color:rgba(255,255,255,.3);margin-bottom:4px}
+    .bmv{font-size:17px;font-weight:600;color:#fff;font-family:var(--fd)}
+    .bmv.s{color:var(--gm)}
+    .mg{background:rgba(255,255,255,.04);border-radius:var(--rl);padding:18px;border:1px solid rgba(255,255,255,.05)}
+    .mgt{font-size:10px;font-weight:600;color:rgba(255,255,255,.3);margin-bottom:14px;letter-spacing:.07em;text-transform:uppercase}
+    .mgb{height:4px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;margin-bottom:5px}
+    .mgf{height:100%;border-radius:2px;background:var(--g)}
+    .mgl{display:flex;justify-content:space-between;font-size:10px;color:rgba(255,255,255,.25);margin-bottom:12px}
+    .mgl .v{color:var(--gm)}
+    .mgc{background:rgba(29,184,127,.08);border-radius:8px;padding:12px;text-align:center;border:1px solid rgba(29,184,127,.12)}
+    .mgct{font-size:10px;color:rgba(255,255,255,.3);margin-bottom:4px}
+    .mgcv{font-family:var(--fd);font-size:20px;color:var(--gm);font-weight:700}
+
+    /* COMPARE */
+    .cmp-sec{padding:88px 0;background:var(--sf)}
+    .ctbl{width:100%;border-collapse:collapse;margin-top:52px;border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden}
+    .ctbl thead{background:var(--wh)}
+    .ctbl th{padding:16px 22px;text-align:left;font-size:13px;font-weight:500;color:var(--i3);border-bottom:1px solid var(--bd)}
+    .ctbl th.bc{background:var(--dark);color:#fff;text-align:center}
+    .ctbl th.bc .cn{font-family:var(--fd);font-size:15px;font-weight:700;color:var(--gm)}
+    .ctbl th.oc{text-align:center;color:var(--i4)}
+    .ctbl td{padding:13px 22px;border-bottom:1px solid var(--b2);font-size:14px;color:var(--i2)}
+    .ctbl tbody tr:last-child td{border-bottom:none}
+    .ctbl tbody tr:hover td{background:var(--sf)}
+    .ctbl td.bc{text-align:center;background:rgba(29,184,127,.04)}
+    .ctbl td.oc{text-align:center;color:var(--i4)}
+    .cy{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--gl);border-radius:50%}
+    .cy svg{width:12px;height:12px}
+    .cno{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:var(--s2);border-radius:50%;color:var(--i5);font-size:14px}
+    .pt2{font-size:11px;color:var(--i4);background:var(--s2);padding:2px 8px;border-radius:6px}
+    .fl2{font-weight:400}
+    .fl2 small{display:block;font-size:11px;color:var(--i4);margin-top:2px}
+
+    /* FOUNDING SECTION */
+    .fsec{padding:88px 0}
+    .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:52px}
+    .fperks{display:flex;flex-direction:column;gap:20px}
+    .fperk{display:flex;gap:16px;align-items:flex-start}
+    .fpico{width:42px;height:42px;border-radius:var(--r);background:var(--gl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .fpico svg{width:20px;height:20px}
+    .fpt{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:4px}
+    .fpd{font-size:13px;color:var(--i3);line-height:1.6}
+
+    /* FOUNDING RIGHT — dark card */
+    .fright{background:var(--dark);border-radius:var(--rx);padding:36px;position:relative;overflow:hidden;border:1px solid var(--dbd)}
+    .fright::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--g),var(--gm),var(--g),transparent)}
+    .fr-ey{font-size:11px;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:20px}
+    .fr-row{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+    .fr-n{font-family:var(--fd);font-size:54px;font-weight:800;color:#fff;letter-spacing:-2px;line-height:1}
+    .fr-of{font-size:15px;color:rgba(255,255,255,.25)}
+    .fr-lbl{font-size:13px;color:rgba(255,255,255,.4);margin-bottom:20px}
+    .fr-bar{height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;margin-bottom:26px}
+    .fr-fill{height:100%;border-radius:2px;background:var(--g);width:37%;position:relative;overflow:hidden}
+    .fr-fill::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.4),transparent);animation:shimmer 2.5s infinite}
+    .fr-form{display:flex;flex-direction:column;gap:10px}
+    .fr-in{font-family:var(--fb);font-size:14px;padding:13px 16px;border-radius:var(--r);border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:#fff;outline:none;transition:border-color .15s,background .15s}
+    .fr-in::placeholder{color:rgba(255,255,255,.2)}
+    .fr-in:focus{border-color:rgba(29,184,127,.5);background:rgba(255,255,255,.07)}
+    .fr-btn{font-family:var(--fb);font-size:15px;font-weight:600;background:var(--g);color:#fff;border:none;padding:15px;border-radius:var(--r);cursor:pointer;transition:background .15s,transform .1s}
+    .fr-btn:hover{background:var(--gm)}
+    .fr-btn:active{transform:scale(.97)}
+    .fr-note{font-size:11px;color:rgba(255,255,255,.2);text-align:center;margin-top:12px}
+    .fr-ps{display:flex;justify-content:center;gap:18px;margin-top:14px;flex-wrap:wrap}
+    .fr-p{font-size:12px;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:5px}
+    .fr-p .c{color:var(--gm)}
+
+    /* FIRMS */
+    .firms-sec{padding:56px 0;border-top:1px solid var(--b2);border-bottom:1px solid var(--b2)}
+    .firms-lbl{font-size:12px;color:var(--i4);text-align:center;margin-bottom:22px;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+    .firms-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+    .firm{display:flex;align-items:center;gap:7px;background:var(--wh);border:1px solid var(--bd);border-radius:20px;padding:8px 18px;font-size:13px;font-weight:500;color:var(--i2);transition:border-color .2s,transform .15s}
+    .firm:hover{border-color:var(--g);transform:translateY(-1px)}
+    .ftick{width:16px;height:16px;border-radius:50%;background:var(--gl);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .ftick svg{width:9px;height:9px}
+
+    /* PRICING */
+    .price-sec{padding:88px 0;background:var(--sf)}
+    .ptog{display:flex;align-items:center;gap:12px;margin-top:28px;margin-bottom:44px}
+    .ptl{font-size:13px;color:var(--i3)}
+    .ptl.a{color:var(--ink);font-weight:500}
+    .pt-track{width:40px;height:22px;background:var(--s2);border-radius:11px;cursor:pointer;position:relative;transition:background .2s;border:1px solid var(--bd)}
+    .pt-track.on{background:var(--g);border-color:var(--g)}
+    .pt-thumb{width:16px;height:16px;background:#fff;border-radius:50%;position:absolute;top:2px;left:2px;transition:transform .2s;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+    .pt-track.on .pt-thumb{transform:translateX(18px)}
+    .save-pill{font-size:11px;font-weight:600;background:var(--gl);color:var(--gd);padding:3px 10px;border-radius:8px}
+    .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .pcrd{background:var(--wh);border:1px solid var(--bd);border-radius:var(--rx);padding:30px;transition:transform .2s;position:relative}
+    .pcrd:hover{transform:translateY(-3px)}
+    .pcrd.feat{border:2px solid var(--g)}
+    .pcrd-rb{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--g);color:#fff;font-size:10px;font-weight:600;padding:4px 16px;border-radius:0 0 10px 10px;letter-spacing:.06em;text-transform:uppercase}
+    .ptier{font-size:12px;font-weight:600;color:var(--i4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+    .pamt{font-family:var(--fd);font-size:48px;font-weight:800;letter-spacing:-2px;line-height:1}
+    .pamt sup{font-size:22px;vertical-align:super;font-weight:500}
+    .pper{font-size:13px;color:var(--i4);margin-top:6px;margin-bottom:24px}
+    .pdiv{height:1px;background:var(--b2);margin-bottom:22px}
+    .pfeats{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px}
+    .pfeats li{font-size:13px;color:var(--i3);display:flex;align-items:flex-start;gap:9px}
+    .pc2{color:var(--g);flex-shrink:0;font-size:14px}
+    .pcta{font-family:var(--fb);font-size:14px;font-weight:500;width:100%;padding:13px;border-radius:var(--r);cursor:pointer;border:1px solid var(--bd);background:transparent;color:var(--ink);transition:background .15s,transform .1s}
+    .pcta:hover{background:var(--sf)}
+    .pcta:active{transform:scale(.98)}
+    .pcta.f{background:var(--g);color:#fff;border-color:var(--g)}
+    .pcta.f:hover{background:var(--gd)}
+    .pnote{font-size:12px;color:var(--i4);text-align:center;margin-top:24px}
+    .pnote strong{color:var(--ink)}
+
+    /* FAQ */
+    .faq-sec{padding:88px 0}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:52px}
+    .faq{background:var(--wh);border:1px solid var(--bd);border-radius:var(--rl);padding:20px 22px;cursor:pointer;transition:border-color .2s}
+    .faq:hover{border-color:rgba(29,184,127,.3)}
+    .faq-q{font-size:14px;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-ico{font-size:20px;color:var(--i4);flex-shrink:0;transition:transform .2s}
+    .faq-a{font-size:13px;color:var(--i3);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .35s ease,margin-top .2s}
+    .faq.open .faq-a{max-height:120px;margin-top:10px}
+    .faq.open .faq-ico{transform:rotate(45deg)}
+
+    /* FOOTER — dark */
+    footer{background:var(--dark);border-top:1px solid var(--dbd);padding:48px 5% 32px}
+    .fi2{max-width:1160px;margin:0 auto}
+    .ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+    .fb2 .logo{font-size:18px;margin-bottom:12px}
+    .fb2 p{font-size:13px;color:rgba(255,255,255,.3);line-height:1.65;max-width:220px}
+    .fc2 h4{font-size:11px;font-weight:600;color:rgba(255,255,255,.3);margin-bottom:16px;letter-spacing:.07em;text-transform:uppercase}
+    .fc2 ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .fc2 ul a{font-size:13px;color:rgba(255,255,255,.4);transition:color .15s}
+    .fc2 ul a:hover{color:#fff}
+    .fb3{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--dbd)}
+    .fc3{font-size:12px;color:rgba(255,255,255,.2)}
+    .fl3{display:flex;gap:18px}
+    .fl3 a{font-size:12px;color:rgba(255,255,255,.25);transition:color .15s}
+    .fl3 a:hover{color:rgba(255,255,255,.6)}
+
+    /* SUCCESS */
+    .success-state{display:none;text-align:center;padding:20px 0}
+    .sc{width:56px;height:56px;background:rgba(29,184,127,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:26px}
+    .success-state h3{font-family:var(--fd);font-size:24px;font-weight:700;color:#fff;margin-bottom:8px}
+    .success-state p{color:rgba(255,255,255,.4);font-size:14px;line-height:1.6}
+
+    @media(max-width:900px){
+      .hero-inner{padding:72px 5% 64px}
+      .how-grid{grid-template-columns:1fr}
+      .how-visual{display:none}
+      .feat-grid{grid-template-columns:1fr}
+      .fc.big{grid-column:span 1}
+      .bi{grid-template-columns:1fr}
+      .prob-grid{grid-template-columns:1fr}
+      .fgrid{grid-template-columns:1fr}
+      .pgrid{grid-template-columns:1fr}
+      .faq-grid{grid-template-columns:1fr}
+      .stats-i{grid-template-columns:repeat(2,1fr)}
+      .st:nth-child(2){border-right:none}
+      .st:nth-child(3){border-right:1px solid var(--bd)}
+      .ft{grid-template-columns:1fr 1fr;gap:32px}
+      .nav-links{display:none}
+      .fb-form{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="ann">
+  <strong>Founding member waitlist open.</strong> First 100 traders get 30% off forever. <a href="#founding">Claim your spot →</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-i">
+    <div class="logo">bridgr<span>.trade</span></div>
+    <ul class="nav-links">
+      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#compare">Compare</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-r">
+      <button class="btn-ghost-d">Log in</button>
+      <button class="btn-nav" onclick="document.getElementById('hero-em').focus()">Claim founding spot</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO — dark, centered, full width -->
+<section class="hero-section">
+  <div class="hero-inner">
+    <div class="hero-pill au"><span class="hero-dot"></span>Founding member waitlist open</div>
+    <h1 class="hero-h1 au d1">
+      Your strategy.<br>
+      <span class="g">Your broker.</span><br>
+      <span class="dim">Zero manual clicks.</span>
+    </h1>
+    <p class="hero-sub au d2">
+      Bridgr connects TradingView alerts to Tradovate and Rithmic with <strong>prop firm rules baked in</strong> — daily loss limits, consistency caps, and auto-shutoffs. No other platform does this.
+    </p>
+
+    <div class="fbox au d3">
+      <div class="fb-lbl">Founding member spots</div>
+      <div class="spots-row">
+        <div class="spots-n" id="h-spots">63</div>
+        <div class="spots-of">/ 100 remaining</div>
+      </div>
+      <div class="spots-lbl">37 of 100 founding spots claimed</div>
+      <div class="spots-bar"><div class="spots-fill"></div></div>
+      <div class="fb-perks">
+        <div class="fb-perk"><span class="fp-ck">✓</span>Lifetime 30% discount — locked in forever</div>
+        <div class="fb-perk"><span class="fp-ck">✓</span>First access before public launch</div>
+        <div class="fb-perk"><span class="fp-ck">✓</span>Direct access to the founder for feature requests</div>
+        <div class="fb-perk"><span class="fp-ck">✓</span>Founding member badge in your dashboard</div>
+      </div>
+      <div class="fb-form">
+        <input class="fb-in" id="hero-em" type="email" placeholder="your@email.com" />
+        <button class="fb-btn" id="hero-btn" onclick="submitHero()">Claim spot →</button>
+      </div>
+      <div class="fb-note">No credit card. No spam. One email when we launch.</div>
+    </div>
+
+    <div class="hero-proof au d4">
+      <div class="h-pi">7-day free trial</div>
+      <div class="h-pi-dot"></div>
+      <div class="h-pi">Cancel anytime</div>
+      <div class="h-pi-dot"></div>
+      <div class="h-pi">No coding required</div>
+      <div class="h-pi-dot"></div>
+      <div class="h-pi">Tradovate + Rithmic</div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK → LIGHT FADE -->
+<div class="hero-fade"></div>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ti"><span class="s">MNQ</span><span class="up">▲ 19,867.25</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">ES</span><span class="up">▲ 5,421.50</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">NQ</span><span class="up">▲ 19,862.00</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">CL</span><span class="dn">▼ 78.42</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">GC</span><span class="up">▲ 2,341.80</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">RTY</span><span class="dn">▼ 2,012.40</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">MES</span><span class="up">▲ 5,421.50</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">ZB</span><span class="dn">▼ 114.25</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">MNQ</span><span class="up">▲ 19,867.25</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">ES</span><span class="up">▲ 5,421.50</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">NQ</span><span class="up">▲ 19,862.00</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">CL</span><span class="dn">▼ 78.42</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">GC</span><span class="up">▲ 2,341.80</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">RTY</span><span class="dn">▼ 2,012.40</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">MES</span><span class="up">▲ 5,421.50</span><span class="sp">|</span></div>
+    <div class="ti"><span class="s">ZB</span><span class="dn">▼ 114.25</span><span class="sp">|</span></div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-i">
+    <div class="st"><div class="st-n"><span class="g" id="stat-spots">63</span></div><div class="st-l">Founding spots remaining</div></div>
+    <div class="st"><div class="st-n"><span class="g">68</span><span style="font-size:18px;color:var(--i4)">ms</span></div><div class="st-l">Target execution speed</div></div>
+    <div class="st"><div class="st-n"><span class="g">99</span><span style="font-size:18px;color:var(--i4)">.9%</span></div><div class="st-l">Infrastructure uptime SLA</div></div>
+    <div class="st"><div class="st-n"><span class="g">6</span></div><div class="st-l">Prop firms at launch</div></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="prob-sec">
+  <div class="sw">
+    <div class="ey">The problem</div>
+    <div class="sh2">Prop traders are losing funded<br>accounts to preventable mistakes.</div>
+    <div class="ssub">Automation tools exist — but none of them know you're trading with a prop firm. That gap costs traders real money.</div>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-n">1 in 3</div><div class="prob-d">Funded traders who automate strategies <strong>violate their daily loss limit</strong> at least once — because their tool has no awareness of prop firm rules.</div></div>
+      <div class="prob-card"><div class="prob-n">$600+</div><div class="prob-d">Average cost of a <strong>blown funded account evaluation</strong> — entirely preventable with an automated daily loss limit kill switch.</div></div>
+      <div class="prob-card"><div class="prob-n">$50/mo</div><div class="prob-d">What traders pay for PickMyTrade — a tool that <strong>doesn't know what a prop firm is</strong> and leaves all rule enforcement to you.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-sec" id="how-it-works">
+  <div class="sw">
+    <div class="ey">How it works</div>
+    <div class="sh2">Live in under 10 minutes.</div>
+    <div class="ssub">No coding. No server setup. No JSON by hand. Connect your broker, select your firm, paste a URL — done.</div>
+    <div class="how-grid">
+      <div class="steps" id="steps">
+        <div class="step active" onclick="setStep(0)">
+          <div class="sn">1</div>
+          <div><div class="st2">Connect your broker</div><div class="sd">Link your Tradovate or Rithmic account in under 60 seconds. Multiple accounts supported from day one.</div></div>
+        </div>
+        <div class="step" onclick="setStep(1)">
+          <div class="sn">2</div>
+          <div><div class="st2">Set your prop firm rules</div><div class="sd">Select your firm and account size. Bridgr loads the exact daily loss limit, consistency rules, and max contracts automatically.</div></div>
+        </div>
+        <div class="step" onclick="setStep(2)">
+          <div class="sn">3</div>
+          <div><div class="st2">Generate your alert</div><div class="sd">Configure your trade parameters visually. Bridgr generates your complete JSON payload — no manual coding required.</div></div>
+        </div>
+        <div class="step" onclick="setStep(3)">
+          <div class="sn">4</div>
+          <div><div class="st2">Paste into TradingView</div><div class="sd">Copy your webhook URL into your TradingView alert. Fully automated. Bridgr handles everything from here.</div></div>
+        </div>
+      </div>
+      <div class="how-visual">
+        <div style="font-size:11px;font-weight:600;color:var(--i4);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px">Your webhook URL</div>
+        <div class="wh-url">
+          <div class="wh-t">https://bridgr.trade/wh/usr_k9x2m4p7...</div>
+          <button class="cp-btn" onclick="this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)">Copy</button>
+        </div>
+        <div style="font-size:11px;font-weight:600;color:var(--i4);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px">Alert payload</div>
+        <div class="cblock">
+          <div><span class="cp">{</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"action"</span><span class="cp">: </span><span class="cs">"buy"</span><span class="cp">,</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"symbol"</span><span class="cp">: </span><span class="cs">"MNQ"</span><span class="cp">,</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"qty"</span><span class="cp">: </span><span class="cv">12</span><span class="cp">,</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"orderType"</span><span class="cp">: </span><span class="cs">"Market"</span><span class="cp">,</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"stopLoss"</span><span class="cp">: </span><span class="cv">10</span><span class="cp">,</span></div>
+          <div>&nbsp;&nbsp;<span class="ck">"takeProfit"</span><span class="cp">: </span><span class="cv">20</span></div>
+          <div><span class="cp">}</span></div>
+        </div>
+        <div style="background:var(--gl);border-radius:var(--r);padding:11px 14px;font-size:12px;color:var(--gd);font-weight:500">✓ Auto-generated — no manual JSON writing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="feat-sec" id="features">
+  <div class="sw">
+    <div class="ey">Features</div>
+    <div class="sh2">Built for funded traders.<br>Not retrofitted for them.</div>
+    <div class="feat-grid">
+      <div class="fc big">
+        <div class="bi">
+          <div>
+            <div class="fi" style="background:rgba(29,184,127,.12)"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5V10c0 4 2.8 7 7 8 4.2-1 7-4 7-8V5.5L10 2z" stroke="#5DCAA5" stroke-width="1.5" fill="none"/></svg></div>
+            <div class="fh3">Prop firm mode<span class="obadge">Only on Bridgr</span></div>
+            <div class="fp">Set your account size, select your firm — Bridgr loads the exact rules and automatically halts all trading before you breach your daily loss limit or consistency cap. No other platform does this.</div>
+            <div class="bmet">
+              <div class="bm"><div class="bml">Daily drawdown</div><div class="bmv s">38% used</div></div>
+              <div class="bm"><div class="bml">Consistency</div><div class="bmv s">On track</div></div>
+              <div class="bm"><div class="bml">Status</div><div class="bmv s">Trading</div></div>
+              <div class="bm"><div class="bml">Firm</div><div class="bmv" style="font-size:14px">Tradeify</div></div>
+            </div>
+          </div>
+          <div class="mg">
+            <div class="mgt">Daily loss limit</div>
+            <div class="mgb"><div class="mgf" style="width:38%"></div></div>
+            <div class="mgl"><span class="v">$228 used</span><span>$600 max</span></div>
+            <div class="mgb"><div class="mgf" style="width:22%"></div></div>
+            <div class="mgl"><span class="v">22% of max day</span><span>Consistency cap</span></div>
+            <div class="mgc"><div class="mgct">Auto-shutoff in</div><div class="mgcv">$372 away</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc"><div class="fi" style="background:#EEEDFE"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#534AB7" stroke-width="1.5"/><path d="M7 10h6M10 7v6" stroke="#534AB7" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="fh3">Multi-account routing</div><div class="fp">One webhook fires to all your funded accounts simultaneously. Same strategy, every account, zero extra setup.</div></div>
+      <div class="fc"><div class="fi" style="background:#E6F1FB"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M13 7l3 3-3 3" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="fh3">Sub-100ms execution</div><div class="fp">Dedicated infrastructure. Webhook to broker fill in under 100ms — critical for scalping MNQ with 12 contracts.</div></div>
+      <div class="fc"><div class="fi" style="background:#E1F5EE"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="5" width="14" height="10" rx="2" stroke="#0d6e50" stroke-width="1.5"/><path d="M7 9h6M7 12h4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="fh3">Smart alert builder</div><div class="fp">Configure parameters visually. Bridgr auto-generates the complete JSON payload — zero manual coding required.</div></div>
+      <div class="fc"><div class="fi" style="background:#FAEEDA"><svg viewBox="0 0 20 20" fill="none"><path d="M10 4v6l4 2" stroke="#854F0B" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#854F0B" stroke-width="1.5"/></svg></div><div class="fh3">Session time filters</div><div class="fp">Only trade defined windows — NY open, no FOMC, auto-flatten before close. Built-in, no Pine Script changes needed.</div></div>
+      <div class="fc"><div class="fi" style="background:#FEF0EF"><svg viewBox="0 0 20 20" fill="none"><path d="M10 7v4M10 13h.01" stroke="#993C1D" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#993C1D" stroke-width="1.5"/></svg></div><div class="fh3">Duplicate alert guard</div><div class="fp">TradingView sometimes fires the same alert twice. Bridgr detects and blocks duplicates — no more costly double-fills.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="cmp-sec" id="compare">
+  <div class="sw">
+    <div class="ey">Comparison</div>
+    <div class="sh2">Bridgr vs the alternatives.</div>
+    <div class="ssub">See exactly what makes Bridgr different — and why prop traders specifically need it.</div>
+    <table class="ctbl">
+      <thead>
+        <tr>
+          <th style="width:38%">Feature</th>
+          <th class="bc"><div class="cn">bridgr.trade</div></th>
+          <th class="oc">PickMyTrade</th>
+          <th class="oc">PineConnector</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="fl2">TradingView webhook automation<small>Core feature</small></td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td></tr>
+        <tr><td class="fl2">Tradovate integration<small>Direct API connection</small></td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cno">—</span></td></tr>
+        <tr><td class="fl2">Prop firm daily loss limit enforcement<small>Auto-halt before breach</small></td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cno">—</span></td><td class="oc"><span class="cno">—</span></td></tr>
+        <tr><td class="fl2">Consistency cap tracking<small>Flags days exceeding firm rules</small></td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cno">—</span></td><td class="oc"><span class="cno">—</span></td></tr>
+        <tr><td class="fl2">Multi-account routing<small>One webhook, many accounts</small></td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="pt2">Paid add-on</span></td></tr>
+        <tr><td class="fl2">Session time filters</td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cno">—</span></td><td class="oc"><span class="pt2">Limited</span></td></tr>
+        <tr><td class="fl2">Duplicate alert protection</td><td class="bc"><span class="cy"><svg viewBox="0 0 13 13" fill="none"><path d="M3 6.5l2.5 2.5L10 4" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></td><td class="oc"><span class="cno">—</span></td><td class="oc"><span class="cno">—</span></td></tr>
+        <tr><td class="fl2">Starting price</td><td class="bc" style="font-weight:600;color:var(--gm)">$29/mo</td><td class="oc">$50/mo</td><td class="oc">$20/mo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FOUNDING -->
+<section class="fsec" id="founding">
+  <div class="sw">
+    <div class="ey">Founding members</div>
+    <div class="sh2">We're onboarding our first<br>100 traders personally.</div>
+    <div class="ssub">Every founding member gets a direct line to the team, pricing locked in forever, and features shaped by their feedback.</div>
+    <div class="fgrid">
+      <div class="fperks">
+        <div class="fperk">
+          <div class="fpico"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2 5h5l-4 3 1.5 5L10 12l-4.5 3L7 10 3 7h5z" stroke="#0d6e50" stroke-width="1.5" stroke-linejoin="round" fill="none"/></svg></div>
+          <div><div class="fpt">Lifetime 30% discount</div><div class="fpd">Your founding member rate is locked in forever. No price increases, no tier changes, no expiry. We mean it.</div></div>
+        </div>
+        <div class="fperk">
+          <div class="fpico"><svg viewBox="0 0 20 20" fill="none"><path d="M10 4v6l4 2" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="#0d6e50" stroke-width="1.5"/></svg></div>
+          <div><div class="fpt">First access at launch</div><div class="fpd">We'll personally onboard every founding member and make sure your setup is running before the public launch.</div></div>
+        </div>
+        <div class="fperk">
+          <div class="fpico"><svg viewBox="0 0 20 20" fill="none"><path d="M4 10h12M10 4l6 6-6 6" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="fpt">Direct founder access</div><div class="fpd">Request features directly. Your prop firm, your trading style — founding member feedback shapes the roadmap.</div></div>
+        </div>
+        <div class="fperk">
+          <div class="fpico"><svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="#0d6e50" stroke-width="1.5"/><path d="M7 10l2.5 2.5L13 8" stroke="#0d6e50" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div><div class="fpt">Founding member badge</div><div class="fpd">Permanent badge in your dashboard and your name in the product credits at public launch.</div></div>
+        </div>
+      </div>
+
+      <div id="fr-wrap">
+        <div class="fright">
+          <div class="fr-ey">Founding member waitlist</div>
+          <div class="fr-row"><div class="fr-n" id="f-spots">63</div><div class="fr-of">/ 100 remaining</div></div>
+          <div class="fr-lbl">37 of 100 founding spots claimed</div>
+          <div class="fr-bar"><div class="fr-fill"></div></div>
+          <div class="fr-form">
+            <input class="fr-in" id="f-email" type="email" placeholder="your@email.com" />
+            <input class="fr-in" id="f-firm" type="text" placeholder="Your prop firm (Tradeify, Apex, Topstep...)" />
+            <button class="fr-btn" onclick="submitFounding()">Claim my founding spot →</button>
+          </div>
+          <div class="fr-note">No credit card. No spam. One email when we launch.</div>
+          <div class="fr-ps">
+            <div class="fr-p"><span class="c">✓</span>30% off forever</div>
+            <div class="fr-p"><span class="c">✓</span>First access</div>
+            <div class="fr-p"><span class="c">✓</span>Shape the roadmap</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIRMS -->
+<section class="firms-sec">
+  <div class="sw">
+    <div class="firms-lbl">Supported prop firms at launch</div>
+    <div class="firms-row">
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tradeify</div>
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Apex Trader Funding</div>
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Topstep</div>
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Take Profit Trader</div>
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Bulenox</div>
+      <div class="firm"><span class="ftick"><svg viewBox="0 0 9 9" fill="none"><path d="M2 4.5l2 2 3-3" stroke="#0d6e50" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FundedNext</div>
+      <div class="firm" style="color:var(--i4);border-style:dashed">+ more at launch</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="price-sec" id="pricing">
+  <div class="sw">
+    <div class="ey">Pricing</div>
+    <div class="sh2">Simple, flat pricing.<br>No per-trade fees. Ever.</div>
+    <div class="ptog">
+      <span class="ptl a" id="ml">Monthly</span>
+      <div class="pt-track" id="ptog" onclick="toggleBilling()"><div class="pt-thumb"></div></div>
+      <span class="ptl" id="al">Annual</span>
+      <span class="save-pill" id="sp" style="opacity:.4">Save 20%</span>
+    </div>
+    <div class="pgrid">
+      <div class="pcrd">
+        <div class="ptier">Starter</div>
+        <div class="pamt"><sup>$</sup><span class="pn" data-m="29" data-a="23">29</span></div>
+        <div class="pper">per month<span class="an" style="display:none"> · billed annually</span></div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pc2">✓</span>1 broker account</li>
+          <li><span class="pc2">✓</span>Unlimited strategies</li>
+          <li><span class="pc2">✓</span>Prop firm mode</li>
+          <li><span class="pc2">✓</span>Trade log & history</li>
+          <li><span class="pc2">✓</span>Alert builder</li>
+        </ul>
+        <button class="pcta" onclick="scrollToFounding()">Claim founding spot</button>
+      </div>
+      <div class="pcrd feat">
+        <div class="pcrd-rb">Most popular</div>
+        <div class="ptier">Pro</div>
+        <div class="pamt"><sup>$</sup><span class="pn" data-m="39" data-a="31">39</span></div>
+        <div class="pper">per month<span class="an" style="display:none"> · billed annually</span></div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pc2">✓</span>Up to 5 broker accounts</li>
+          <li><span class="pc2">✓</span>Multi-account routing</li>
+          <li><span class="pc2">✓</span>Prop firm mode</li>
+          <li><span class="pc2">✓</span>Session time filters</li>
+          <li><span class="pc2">✓</span>Duplicate alert guard</li>
+          <li><span class="pc2">✓</span>Priority support</li>
+        </ul>
+        <button class="pcta f" onclick="scrollToFounding()">Claim founding spot</button>
+      </div>
+      <div class="pcrd">
+        <div class="ptier">Unlimited</div>
+        <div class="pamt"><sup>$</sup><span class="pn" data-m="59" data-a="47">59</span></div>
+        <div class="pper">per month<span class="an" style="display:none"> · billed annually</span></div>
+        <div class="pdiv"></div>
+        <ul class="pfeats">
+          <li><span class="pc2">✓</span>Unlimited accounts</li>
+          <li><span class="pc2">✓</span>Everything in Pro</li>
+          <li><span class="pc2">✓</span>Early access features</li>
+          <li><span class="pc2">✓</span>1-on-1 onboarding call</li>
+          <li><span class="pc2">✓</span>Private Discord access</li>
+          <li><span class="pc2">✓</span>Strategy review session</li>
+        </ul>
+        <button class="pcta" onclick="scrollToFounding()">Claim founding spot</button>
+      </div>
+    </div>
+    <div class="pnote">Founding members get <strong>30% off any plan, locked in forever.</strong> All plans include a 7-day free trial.</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" id="faq">
+  <div class="sw">
+    <div class="ey">FAQ</div>
+    <div class="sh2">Common questions.</div>
+    <div class="faq-grid">
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Does Bridgr work with my prop firm?<span class="faq-ico">+</span></div><div class="faq-a">Bridgr supports Tradeify, Apex Trader Funding, Topstep, Take Profit Trader, Bulenox, and FundedNext at launch. If your firm uses Tradovate or Rithmic as the executing broker, Bridgr will work with it.</div></div>
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Do I need to know how to code?<span class="faq-ico">+</span></div><div class="faq-a">Not at all. Bridgr's alert builder generates your complete JSON payload automatically. If your TradingView alert is set up, you can be live in under 10 minutes with zero code written.</div></div>
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">How does the prop firm guard work?<span class="faq-ico">+</span></div><div class="faq-a">You enter your account size and select your prop firm. Bridgr loads the firm's exact rules — daily loss limit, consistency requirements, max contracts. As your P&L updates throughout the day, Bridgr monitors in real time and blocks any new orders that would breach your limits.</div></div>
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">When does Bridgr launch?<span class="faq-ico">+</span></div><div class="faq-a">We're currently in private development. Founding members get access first — we'll reach out personally to every founding member before the public launch to get their setup running perfectly.</div></div>
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">Is the founding member discount really forever?<span class="faq-ico">+</span></div><div class="faq-a">Yes. 30% off, locked in at signup, no expiry. The people who bet on us early deserve to be rewarded permanently — not just for an introductory period.</div></div>
+      <div class="faq" onclick="this.classList.toggle('open')"><div class="faq-q">How is this different from PickMyTrade?<span class="faq-ico">+</span></div><div class="faq-a">PickMyTrade is a general-purpose webhook relay with zero prop firm awareness. Bridgr is built specifically for funded traders — with daily loss limit enforcement, consistency cap tracking, session filters, and duplicate alert protection. And it starts at $29/mo vs PMT's $50/mo.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fi2">
+    <div class="ft">
+      <div class="fb2">
+        <div class="logo">bridgr<span>.trade</span></div>
+        <p>The only TradingView automation platform built specifically for prop firm traders.</p>
+      </div>
+      <div class="fc2"><h4>Product</h4><ul><li><a href="#how-it-works">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#compare">Compare</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div class="fc2"><h4>Early access</h4><ul><li><a href="#founding">Claim founding spot</a></li><li><a href="#founding">Founding member perks</a></li><li><a href="mailto:hello@bridgr.trade">Contact us</a></li></ul></div>
+      <div class="fc2"><h4>Legal</h4><ul><li><a href="/privacy.html">Privacy policy</a></li><li><a href="/terms.html">Terms of service</a></li></ul></div>
+    </div>
+    <div class="fb3">
+      <div class="fc3">© 2026 Bridgr. All rights reserved.</div>
+      <div class="fl3"><a href="/privacy.html">Privacy policy</a><a href="/terms.html">Terms of service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let annual=false;
+  function toggleBilling(){
+    annual=!annual;
+    document.getElementById('ptog').classList.toggle('on',annual);
+    document.getElementById('ml').classList.toggle('a',!annual);
+    document.getElementById('al').classList.toggle('a',annual);
+    document.getElementById('sp').style.opacity=annual?'1':'0.4';
+    document.querySelectorAll('.pn').forEach(e=>e.textContent=annual?e.dataset.a:e.dataset.m);
+    document.querySelectorAll('.an').forEach(e=>e.style.display=annual?'inline':'none');
+  }
+
+  let cur=0;
+  function setStep(n){
+    document.querySelectorAll('.step').forEach((s,i)=>s.classList.toggle('active',i===n));
+    cur=n;
+  }
+  setInterval(()=>setStep((cur+1)%4),4000);
+
+  function decrement(){
+    ['h-spots','f-spots','stat-spots'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el){const n=parseInt(el.textContent)-1;el.textContent=Math.max(n,0);}
+    });
+  }
+
+  function submitHero(){
+    const em=document.getElementById('hero-em');
+    if(!em.value||!em.value.includes('@')){em.style.borderColor='rgba(220,80,80,.5)';em.focus();return;}
+    decrement();
+    em.value='';
+    em.placeholder="You're on the list!";
+    em.style.borderColor='rgba(29,184,127,.5)';
+    const btn=document.getElementById('hero-btn');
+    btn.textContent='✓ Claimed';
+    btn.style.background='#0d6e50';
+    btn.disabled=true;
+  }
+
+  function submitFounding(){
+    const em=document.getElementById('f-email');
+    if(!em.value||!em.value.includes('@')){em.style.borderColor='rgba(220,80,80,.5)';em.focus();return;}
+    decrement();
+    document.getElementById('fr-wrap').innerHTML=`
+      <div class="fright" style="text-align:center;padding:48px 36px">
+        <div class="sc">✓</div>
+        <h3 style="font-family:var(--fd);font-size:24px;font-weight:700;color:#fff;margin-bottom:10px">You're a founding member.</h3>
+        <p style="color:rgba(255,255,255,.4);font-size:14px;line-height:1.7">We'll reach out personally before launch to get your setup running perfectly. Welcome to Bridgr.</p>
+      </div>`;
+  }
+
+  function scrollToFounding(){
+    document.getElementById('founding').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>document.getElementById('f-email').focus(),600);
+  }
+
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.fc,.prob-card,.fperk,.pcrd').forEach(el=>{
+    el.style.opacity='0';
+    el.style.transform='translateY(16px)';
+    el.style.transition='opacity 0.55s ease, transform 0.55s ease';
+    obs.observe(el);
+  });
+</script>
+</body>
+</html>
