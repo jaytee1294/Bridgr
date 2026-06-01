@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Bridgr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --g:#1db87f;--gl:#e0f5ee;--gd:#0d6e50;
+      --ink:#0c1210;--i2:#263028;--i3:#546058;--i4:#8ba098;
+      --sf:#f3f7f5;--wh:#ffffff;--bd:rgba(12,18,16,0.1);--b2:rgba(12,18,16,0.06);
+      --dark:#0a0f0d;--dbd:rgba(255,255,255,0.07);
+      --r:10px;--rl:16px;--fd:'Syne',sans-serif;--fb:'DM Sans',sans-serif
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);background:var(--wh);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:var(--g);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    nav{background:rgba(10,15,13,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--dbd);padding:0 5%}
+    .nav-i{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:var(--fd);font-size:20px;font-weight:800;letter-spacing:-.5px;color:#fff;text-decoration:none}
+    .logo span{color:var(--g)}
+    .nav-back{font-size:14px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:6px;transition:color .15s}
+    .nav-back:hover{color:#fff;text-decoration:none}
+
+    .hero-band{background:var(--dark);padding:56px 5% 48px;border-bottom:1px solid var(--dbd)}
+    .hero-band-i{max-width:760px;margin:0 auto}
+    .page-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--g);margin-bottom:12px}
+    .page-h1{font-family:var(--fd);font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;letter-spacing:-1px;line-height:1.1;margin-bottom:12px}
+    .page-meta{font-size:13px;color:rgba(255,255,255,.3)}
+
+    .content{max-width:760px;margin:0 auto;padding:56px 5% 88px}
+    .content h2{font-family:var(--fd);font-size:20px;font-weight:700;color:var(--ink);margin:40px 0 12px;letter-spacing:-.3px}
+    .content h2:first-child{margin-top:0}
+    .content p{font-size:15px;color:var(--i3);margin-bottom:14px;line-height:1.75}
+    .content ul{margin:0 0 14px 20px;display:flex;flex-direction:column;gap:7px}
+    .content ul li{font-size:15px;color:var(--i3);line-height:1.65}
+    .content strong{color:var(--i2);font-weight:500}
+    .divider{height:1px;background:var(--b2);margin:32px 0}
+    .highlight{background:#fff8e6;border-left:3px solid #f4a261;border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin-bottom:20px}
+    .highlight p{margin:0;font-size:14px;color:#6b4a1a}
+
+    footer{background:var(--dark);border-top:1px solid var(--dbd);padding:32px 5%}
+    .foot-i{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+    .foot-logo{font-family:var(--fd);font-size:16px;font-weight:800;color:#fff}
+    .foot-logo span{color:var(--g)}
+    .foot-links{display:flex;gap:18px}
+    .foot-links a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s}
+    .foot-links a:hover{color:#fff}
+    .foot-copy{font-size:12px;color:rgba(255,255,255,.2)}
+
+    @media(max-width:600px){
+      .foot-i{flex-direction:column;gap:16px;text-align:center}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <a href="/index.html" class="logo">bridgr<span>.trade</span></a>
+    <a href="/index.html" class="nav-back">← Back to home</a>
+  </div>
+</nav>
+
+<div class="hero-band">
+  <div class="hero-band-i">
+    <div class="page-label">Legal</div>
+    <h1 class="page-h1">Terms of Service</h1>
+    <div class="page-meta">Last updated: June 1, 2026 &nbsp;·&nbsp; Effective immediately</div>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="highlight">
+    <p><strong>Important:</strong> Bridgr is an automation tool only. We are not a financial advisor, broker, or investment service. All trading decisions and associated risks are entirely your own. Automated trading involves significant financial risk including the potential loss of your entire funded account.</p>
+  </div>
+
+  <h2>1. Acceptance of terms</h2>
+  <p>By accessing bridgr.trade or signing up for our waitlist or service, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use our service.</p>
+  <p>These terms apply to all visitors, waitlist members, and users of the Bridgr platform.</p>
+
+  <div class="divider"></div>
+
+  <h2>2. Description of service</h2>
+  <p>Bridgr is a software platform that receives webhook alerts from TradingView and relays trade instructions to connected broker accounts (currently Tradovate and Rithmic). Bridgr also provides optional prop firm rule monitoring features that track daily loss limits and consistency rules.</p>
+  <p>Bridgr does not:</p>
+  <ul>
+    <li>Provide financial, investment, or trading advice</li>
+    <li>Guarantee any particular trading outcome or profit</li>
+    <li>Act as a broker, dealer, or investment advisor</li>
+    <li>Control, override, or guarantee execution quality at the broker level</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>3. Founding member waitlist</h2>
+  <p>By joining the Bridgr founding member waitlist, you agree to the following:</p>
+  <ul>
+    <li>You will receive a single launch notification email when Bridgr becomes available</li>
+    <li>You may receive occasional product updates or founding member communications</li>
+    <li>Your spot on the waitlist does not constitute a binding contract or guarantee of service availability</li>
+    <li>The 30% founding member discount offer is contingent on Bridgr launching and you subscribing to a paid plan — it is not a binding financial commitment on either party at the waitlist stage</li>
+    <li>You can unsubscribe from waitlist communications at any time</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>4. Trading risk disclosure</h2>
+  <p><strong>Trading futures and other financial instruments involves substantial risk of loss and is not appropriate for all investors.</strong> Past performance of any trading strategy is not indicative of future results.</p>
+  <p>By using Bridgr, you acknowledge and agree that:</p>
+  <ul>
+    <li>You are solely responsible for all trading decisions made through your connected broker accounts</li>
+    <li>Automated trading systems, including Bridgr, can malfunction, experience connectivity issues, or behave unexpectedly</li>
+    <li>Bridgr's prop firm guard feature is provided as a convenience tool only — you remain solely responsible for compliance with your prop firm's rules</li>
+    <li>You will not hold Bridgr liable for any trading losses, account violations, evaluation failures, or other financial damages arising from use of the platform</li>
+    <li>You should test all strategies in a demo or paper trading environment before trading with real or funded capital</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>5. Prop firm compliance</h2>
+  <p>Bridgr's prop firm mode is designed to assist traders in monitoring their adherence to common prop firm rules. However:</p>
+  <ul>
+    <li>Prop firm rules change frequently — Bridgr does not guarantee that its rule configurations are always up to date</li>
+    <li>You are responsible for verifying that Bridgr's configured rules match your specific prop firm's current terms</li>
+    <li>Technical failures, latency issues, or data errors could cause the guard feature to behave incorrectly</li>
+    <li>Bridgr is not affiliated with, endorsed by, or responsible to any prop trading firm</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>6. Account and security</h2>
+  <p>When you create a Bridgr account, you are responsible for:</p>
+  <ul>
+    <li>Maintaining the confidentiality of your login credentials</li>
+    <li>All activity that occurs under your account</li>
+    <li>Notifying us immediately of any unauthorized account access at <a href="mailto:hello@bridgr.trade">hello@bridgr.trade</a></li>
+  </ul>
+  <p>You may not share your account with others or use Bridgr to relay trades on behalf of third parties without explicit written permission from Bridgr.</p>
+
+  <div class="divider"></div>
+
+  <h2>7. Acceptable use</h2>
+  <p>You agree not to use Bridgr to:</p>
+  <ul>
+    <li>Violate any applicable laws or regulations</li>
+    <li>Circumvent or violate your prop firm's terms of service in ways beyond what Bridgr's intended automation features support</li>
+    <li>Interfere with or disrupt Bridgr's infrastructure or the broker APIs we connect to</li>
+    <li>Attempt to reverse engineer, copy, or create derivative works from Bridgr's software</li>
+    <li>Use the service for any purpose other than your own personal trading automation</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>8. Subscription and billing</h2>
+  <p>Bridgr will operate on a monthly or annual subscription model. When billing launches:</p>
+  <ul>
+    <li>Subscriptions renew automatically unless cancelled before the renewal date</li>
+    <li>You may cancel your subscription at any time — cancellation takes effect at the end of the current billing period</li>
+    <li>We do not offer refunds for partial billing periods, except where required by law</li>
+    <li>Founding member pricing, once applied to an account, will be maintained for the lifetime of that account's active subscription</li>
+    <li>We reserve the right to change pricing with 30 days' notice — founding member rates are excluded from price increases</li>
+  </ul>
+
+  <div class="divider"></div>
+
+  <h2>9. Limitation of liability</h2>
+  <p>To the maximum extent permitted by applicable law, Bridgr and its founders, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to trading losses, loss of funded account status, lost profits, or loss of data arising from your use of the service.</p>
+  <p>Our total liability to you for any claim arising from use of Bridgr shall not exceed the amount you paid to Bridgr in the three months preceding the claim.</p>
+
+  <div class="divider"></div>
+
+  <h2>10. Modifications to service and terms</h2>
+  <p>We reserve the right to modify or discontinue Bridgr at any time. We will provide reasonable notice to active subscribers before making material changes.</p>
+  <p>We may update these Terms of Service from time to time. Continued use of Bridgr after changes are posted constitutes your acceptance of the updated terms. We will notify founding members of material changes by email.</p>
+
+  <div class="divider"></div>
+
+  <h2>11. Governing law</h2>
+  <p>These terms are governed by and construed in accordance with the laws of the State of Texas, United States, without regard to its conflict of law provisions.</p>
+
+  <div class="divider"></div>
+
+  <h2>12. Contact</h2>
+  <p>Questions about these Terms of Service should be directed to:</p>
+  <p><strong>Bridgr</strong><br>Email: <a href="mailto:hello@bridgr.trade">hello@bridgr.trade</a></p>
+
+</div>
+
+<footer>
+  <div class="foot-i">
+    <div class="foot-logo">bridgr<span>.trade</span></div>
+    <div class="foot-links">
+      <a href="/index.html">Home</a>
+      <a href="/privacy.html">Privacy policy</a>
+      <a href="/terms.html">Terms of service</a>
+    </div>
+    <div class="foot-copy">© 2026 Bridgr</div>
+  </div>
+</footer>
+
+</body>
+</html>
